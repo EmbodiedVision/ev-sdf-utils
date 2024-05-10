@@ -1,0 +1,8 @@
+numpy
+torch
+trimesh[all]
+scikit-learn
+setuptools
+scipy
+scikit-image
+.

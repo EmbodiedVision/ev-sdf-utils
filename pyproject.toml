@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "torch"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="ev_sdf_utils"
+version="0.1.0"
+authors=[
+    {name="Michael Strecke", email="mstrecke@tue.mpg.de"},
+]
+description="Tools for handling SDF grids (marching cubes and trilinear grid interpolation)"
+readme = "README.md"
+license = {text="Apache-2.0"}
+requires-python = ">=3.7"
+dependencies=[
+    "torch",
+    "scipy",
+    "scikit-image",
+]
+
+[tool.setuptools.packages.find]
+where=["src"]
+namespaces = false
