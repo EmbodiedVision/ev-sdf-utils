@@ -524,8 +524,8 @@ std::vector<torch::Tensor> marchingCubes ( const at::Tensor sdf, double isolevel
     gpuErrchk( cudaGetLastError() );
     cudaDeviceSynchronize();
 
-    long numVerts = vertIdxBuffer.sum().item<long>();
-    long numTris = triIdxBuffer.sum().item<long>();
+    int64_t numVerts = vertIdxBuffer.sum().item<int64_t>();
+    int64_t numTris = triIdxBuffer.sum().item<int64_t>();
     if ( !numVerts )
         return { sdf.new_zeros({numVerts, 3}), torch::zeros({numTris, 3}, idxOpts) };
 

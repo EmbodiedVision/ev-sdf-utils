@@ -22,7 +22,7 @@ import torch
 import trimesh
 from sklearn.neighbors import NearestNeighbors
 
-import sdf_utils
+import ev_sdf_utils
 
 
 # From https://gist.github.com/sergeyprokudin/c4bf4059230da8db8256e36524993367
@@ -99,13 +99,13 @@ def run_mc_interp(sdf, sdf_grads, inds):
     start_mc = time.time()
     vs, fs = [], []
     for s in sdf:
-        v, f = sdf_utils.marching_cubes(s, 0.)
+        v, f = ev_sdf_utils.marching_cubes(s, 0.)
         vs.append(v)
         fs.append(f)
     time_mc = time.time() - start_mc
 
     start_interp = time.time()
-    vals = sdf_utils.grid_interp(sdf_grads, inds, bounds_error=False)
+    vals = ev_sdf_utils.grid_interp(sdf_grads, inds, bounds_error=False)
     if sdf_grads.is_cuda:
         torch.cuda.synchronize()
     time_interp = time.time() - start_interp

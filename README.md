@@ -43,11 +43,11 @@ This can be useful if pip is run from a different process, e.g. inside a conda e
 ## Usage
 
 ### TL;DR
-After [installation](#installation), the module `sdf_utils` is available and provides two functions:
+After [installation](#installation), the module `ev_sdf_utils` is available and provides two functions:
 ```python
-from sdf_utils import marching_cubes, grid_interp
+from ev_sdf_utils import marching_cubes, grid_interp
 ```
-Please refer to the documentation strings in [utils.py](src/sdf_utils/utils.py) on how to use them.
+Please refer to the documentation strings in [utils.py](src/ev_sdf_utils/utils.py) on how to use them.
 
 
 ### Example Script
